@@ -2,8 +2,7 @@ const display = document.getElementById('display');
 const historyDisplay = document.getElementById('history');
 
 function appendToDisplay(input) {
-    // แก้ไข: เช็คแค่ Error อย่างเดียว (ลบ GAME OVER ออกแล้ว)
-    if(display.value === "Error") {
+    if(display.value === "ERROR") {
         display.value = "";
         historyDisplay.innerText = "";
     }
@@ -17,7 +16,7 @@ function clearDisplay() {
 
 function deleteLastChar() {
     // แก้ไข: เช็คแค่ Error อย่างเดียว
-    if(display.value === "Error") {
+    if(display.value === "ERROR") {
         display.value = "";
         historyDisplay.innerText = "";
     } else {
@@ -40,8 +39,8 @@ function calculate() {
         display.value = result;
 
     } catch (error) {
-        // แก้ไข: เปลี่ยนจาก "GAME OVER" เป็น "Error" ตรงนี้ครับ
-        display.value = "Error";
+        display.value = "ERROR";
         historyDisplay.innerText = "";
     }
 }
+
