@@ -2,7 +2,7 @@ const display = document.getElementById('display');
 const historyDisplay = document.getElementById('history');
 
 function appendToDisplay(input) {
-    if(display.value === "Error" || display.value === "GAME OVER") {
+    if(display.value === "Error" || display.value === "ERROR") {
         display.value = "";
         historyDisplay.innerText = "";
     }
@@ -15,7 +15,7 @@ function clearDisplay() {
 }
 
 function deleteLastChar() {
-    if(display.value === "Error" || display.value === "GAME OVER") {
+    if(display.value === "Error" || display.value === "ERROR") {
         display.value = "";
         historyDisplay.innerText = "";
     } else {
@@ -38,7 +38,8 @@ function calculate() {
         display.value = result;
 
     } catch (error) {
-        display.value = "GAME OVER";
+        display.value = "ERROR";
         historyDisplay.innerText = "";
     }
+
 }
