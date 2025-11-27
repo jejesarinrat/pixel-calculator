@@ -2,7 +2,7 @@ const display = document.getElementById('display');
 const historyDisplay = document.getElementById('history');
 
 function appendToDisplay(input) {
-    if(display.value === "ERROR") {
+    if(display.value === "Error") {
         display.value = "";
         historyDisplay.innerText = "";
     }
@@ -15,8 +15,7 @@ function clearDisplay() {
 }
 
 function deleteLastChar() {
-    // แก้ไข: เช็คแค่ Error อย่างเดียว
-    if(display.value === "ERROR") {
+    if(display.value === "Error") {
         display.value = "";
         historyDisplay.innerText = "";
     } else {
@@ -39,8 +38,7 @@ function calculate() {
         display.value = result;
 
     } catch (error) {
-        display.value = "ERROR";
+        display.value = "Error";
         historyDisplay.innerText = "";
     }
 }
-
