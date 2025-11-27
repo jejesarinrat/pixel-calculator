@@ -2,7 +2,8 @@ const display = document.getElementById('display');
 const historyDisplay = document.getElementById('history');
 
 function appendToDisplay(input) {
-    if(display.value === "Error") {
+
+    if(display.value === "ERROR") {
         display.value = "";
         historyDisplay.innerText = "";
     }
@@ -15,7 +16,8 @@ function clearDisplay() {
 }
 
 function deleteLastChar() {
-    if(display.value === "Error") {
+
+    if(display.value === "ERROR") {
         display.value = "";
         historyDisplay.innerText = "";
     } else {
@@ -38,7 +40,8 @@ function calculate() {
         display.value = result;
 
     } catch (error) {
-        display.value = "Error";
+
+        display.value = "ERROR";
         historyDisplay.innerText = "";
     }
 }
