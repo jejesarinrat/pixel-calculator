@@ -55,7 +55,8 @@ function calculate() {
         localStorage.setItem('lastHistory', historyText); 
 
     } catch (error) {
-        display.value = "GAME OVER";
+        display.value = "ERROR";
         historyDisplay.innerText = "";
     }
 }
+
