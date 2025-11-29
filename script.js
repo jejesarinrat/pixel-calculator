@@ -1,6 +1,17 @@
 const display = document.getElementById('display');
 const historyDisplay = document.getElementById('history');
 
+window.onload = function() {
+    const savedResult = localStorage.getItem('lastResult');
+    const savedHistory = localStorage.getItem('lastHistory');
+    if(savedResult) {
+        display.value = savedResult;
+    }
+    if(savedHistory) {
+        historyDisplay.innerText = savedHistory;
+    }
+}
+
 function appendToDisplay(input) {
 
     if(display.value === "ERROR") {
@@ -36,12 +47,15 @@ function calculate() {
             throw new Error("Division by Zero");
         }
 
-        historyDisplay.innerText = expression + " ="; 
+        let historyText = expression + " =";
+        historyDisplay.innerText = historyText; 
         display.value = result;
 
-    } catch (error) {
+        localStorage.setItem('lastResult', result);  
+        localStorage.setItem('lastHistory', historyText); 
 
-        display.value = "ERROR";
+    } catch (error) {
+        display.value = "GAME OVER";
         historyDisplay.innerText = "";
     }
 }
